@@ -34,15 +34,49 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Hello World</title>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+	
     </head>
     <body>
         <div class="app">
-            <h1>Apache Cordova</h1>
+            <h1>Apache Cordova by Doug</h1>
             <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
+	      
+		<div id="main">
+		  <div id="posts">Posts to be shown here</div>
+		</div>
+		
+               <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
         </div>
+	<script type="text/javascript">
+	  
+	$.ajax({
+	type: "GET",
+	dataType: "json",
+	url: "http://thehub.fsd38.ab.ca/rss/file.php/70376/d12e1058a2b9d2ded48313651517905e/mod_data/23/rss.xml",
+	success: onSuccess,
+	error: onError
+	});
+	onSuccess: function(data) {
+	var items = [];
+	$.each(data, function(key, val){
+	items.push('<a href="' + app.posts_url + val.id + '">' + val.id + ' - ' +val.title + '</a>');
+	});
+	$('#posts').html(items.join('<br/>'));
+	console.log('Exiting onSuccess');
+	};
+
+	onError: function(data, textStatus, errorThrown) {
+	console.log('Data: ' + data);
+	console.log('Status: ' + textStatus);
+	console.log('Error: ' + errorThrown);
+	$("#posts").html('Error while loading posts');
+	console.log('Exiting onError');
+	};
+	</script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
