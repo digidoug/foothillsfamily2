@@ -1,32 +1,30 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="foothills.family2" version="0.0.1"
-	xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-	<name>Foothills Family2</name>
-	<description>
+<widget id="foothills.family2" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Foothills Family2</name>
+    <description>
 		A sample Apache Cordova application that responds to the deviceready
 		event.
 	</description>
-	<author href="http://www.eclipse.org/thym" email="thym-dev@eclipse.org">
+    <author email="thym-dev@eclipse.org" href="http://www.eclipse.org/thym">
 		Eclipse.org - Thym
 	</author>
-
-	<content src="index.html" />
-	<!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
-	<plugin name="cordova-plugin-whitelist" spec="1" />
-	<access origin="*" />
-	<allow-intent href="http://*/*" />
-	<allow-intent href="https://*/*" />
-	<allow-intent href="tel:*" />
-	<allow-intent href="sms:*" />
-	<allow-intent href="mailto:*" />
-	<allow-intent href="geo:*" />
-	<platform name="android">
-		<allow-intent href="market:*" />
-	</platform>
-	<platform name="ios">
-		<allow-intent href="itms:*" />
-		<allow-intent href="itms-apps:*" />
-	</platform>
-	<engine name="android" spec="6.2.0-nightly.2016.11.23.3bfeda4a" />
-	<engine name="ios" spec="4.4.0-nightly.2016.11.23.4b864624" />
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <engine name="android" spec="6.2.0-nightly.2016.11.23.3bfeda4a" />
+    <engine name="ios" spec="4.4.0-nightly.2016.11.23.4b864624" />
+    <plugin name="cordova-inappbrowser" spec="~1.0.6" />
 </widget>

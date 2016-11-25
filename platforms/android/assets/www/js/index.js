@@ -1,34 +1,33 @@
+function fsdPage(pagename,pageid)
+{
+	$.ajax(
+			{
+				url: "http://www.fsd38.ab.ca/API.php/"+pageid,
+				success: function(result){
+					$("#header").html(pagename);
+					$("#settext").html(result.html);
+				}
+					
+			}
+			 
+			);
+}
 
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
-};
-
-app.initialize();
+$(document).ready(function()
+		{
+			$.ajax(
+					{
+						url: "/js/links.json",
+						success: function(result){
+							result.links.forEach(function(item,index){
+								$("#menufill").append("<div class='"+item.css+"' id='"+item.link+"'>"+item.title+"</div><br>");
+								$("#"+item.link).click(function(){fsdPage(item.title,item.page)});	
+							})
+							
+						}
+					}
+					);
+			$("#settext").html("Try this one");
+			$("#header").click(function(){fsdPage("Careers In Foothills","careers-in-foothills")});
+		}
+	);	
