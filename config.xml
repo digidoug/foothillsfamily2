@@ -28,4 +28,7 @@
     <engine name="android" spec="6.2.0-nightly.2016.11.23.3bfeda4a" />
     <engine name="ios" spec="4.4.0-nightly.2016.11.23.4b864624" />
     <plugin name="cordova-inappbrowser" spec="~1.0.6" />
+    <plugin name="cordova-plugin-statusbar"/>
+    <preference name="StatusBarOverlaysWebView" value="false" />
+
 </widget>

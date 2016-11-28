@@ -21,6 +21,7 @@
 		9C465AC83CE342C9890E3219 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 42428602595D4E7396D4699D /* CDVLocalFilesystem.m */; };
 		8ED6B260499A49179E583992 /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF23B97ECFE340509AC8A874 /* CDVAssetLibraryFilesystem.m */; };
 		59F58E74703049EA9B363DD6 /* CDVFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 295773A64E60410E8EA4F6B7 /* CDVFileTransfer.m */; };
+		B2A76681BAEA4814B6EB111B /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A87239CCED4960B396E96B /* CDVStatusBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		FE448C59B62947EEB048831D /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; name = "CDVAssetLibraryFilesystem.h"; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		295773A64E60410E8EA4F6B7 /* CDVFileTransfer.m */ = {isa = PBXFileReference; name = "CDVFileTransfer.m"; path = "cordova-plugin-file-transfer/CDVFileTransfer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		673A559927FE4FE7A8E6E449 /* CDVFileTransfer.h */ = {isa = PBXFileReference; name = "CDVFileTransfer.h"; path = "cordova-plugin-file-transfer/CDVFileTransfer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		20A87239CCED4960B396E96B /* CDVStatusBar.m */ = {isa = PBXFileReference; name = "CDVStatusBar.m"; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		8D6402903E454ED199268AB4 /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,8 @@
 				FE448C59B62947EEB048831D /* CDVAssetLibraryFilesystem.h */,
 				295773A64E60410E8EA4F6B7 /* CDVFileTransfer.m */,
 				673A559927FE4FE7A8E6E449 /* CDVFileTransfer.h */,
+				20A87239CCED4960B396E96B /* CDVStatusBar.m */,
+				8D6402903E454ED199268AB4 /* CDVStatusBar.h */,
 			);
 			name = Plugins;
 			path = "Foothills Family2/Plugins";
@@ -301,6 +306,7 @@
 				9C465AC83CE342C9890E3219 /* CDVLocalFilesystem.m in Sources */,
 				8ED6B260499A49179E583992 /* CDVAssetLibraryFilesystem.m in Sources */,
 				59F58E74703049EA9B363DD6 /* CDVFileTransfer.m in Sources */,
+				B2A76681BAEA4814B6EB111B /* CDVStatusBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,4 +17,6 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-navigation href="*" />
+    <gap:plugin name="cordova-inappbrowser" spec="~1.0.6" />
+    <gap:plugin name="cordova-plugin-statusbar" />
 </widget>
