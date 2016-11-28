@@ -2,13 +2,24 @@
 <html>
 <head>
 <title>Hello jQuery</title>
-<script src="js/jquery.min.js"></script>
-<script src="js/index.js"></script> 
+<meta http-equiv="Content-Security-Policy" content="default-src  'self' http://www.fsd38.ab.ca data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *; script-src 'self' https://code.jquery.com">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<!-- Include meta tag to ensure proper rendering and touch zooming -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/css/jquery.mobile-1.4.5.min.css">
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.mobile-1.4.5.min.js"></script>
+<script src="/js/index.js"></script> 
 <link rel="stylesheet" type="text/css" href="css/index.css"></link>
  
  </head>
 
     <body>
+    	<div data-role="header">
+    <h1>Welcome To My Homepage</h1>
+  </div>
     	<div class="ltbluebutton" id="menufill"></div>
     	<h2><div class="ltbluebutton" id="header">Initial</div></h2>
 		<div id="settext">This is text</div>
