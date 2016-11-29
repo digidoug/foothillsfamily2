@@ -9,14 +9,32 @@ var fsdmenu={"links":[
     {"css":"ltbluebutton","link":"wide-ranging","title":"Wide Ranging Programming","page":"wide-ranging-programming"}
 ]};
 
+var fsdinternalnav={"links":[
+{"link":"supportive","title":"Supportive Environment?", "page":"supportive-environment"},
+{"link":"attracted","title":"What attracted you to Foothills?","page":"what-attracted-you-to-foothills"},
+{"link":"likefoot","title":"What do you like about working in Foothills?","page":"what-do-you-like-about-working-in-foothills"}
+]};
+
+function menuFadeOut(menuid)
+{
+	$(menuid).animate({position:"fixed"});
+	$(menuid).animate({left:"-40px"},function(){$(menuid).hide();});
+}
+
+function menuFadeIn(menuid)
+{
+	
+}
+
 function fsdPage(pagename,pageid)
 {
     $.ajax(
 	{
 	    url: "http://www.fsd38.ab.ca/API.php/"+pageid,
 	    success: function(result){
-		$("#header").html(pagename);
-				    $("#settext").html(result.html);
+			menuFadeOut("#menufill");
+			$("#header").html(pagename);
+			$("#settext").html(result.html);
 	    }
 	    
 	}
@@ -26,13 +44,18 @@ function fsdPage(pagename,pageid)
 
 $(document).ready(function()
 {
-    $("#menufill").append("testing");
-    $("#menufill").append("After StatusBar");
+
     fsdmenu.links.forEach(function(item,index){
 	
-	$("#menufill").append("<div class='"+item.css+"' id='"+item.link+"'>"+item.title+"</div><br>");
-	$("#"+item.link).on("tap",function(){fsdPage(item.title,item.page)});
+    	$("#menufill").append("<div class='"+item.css+"' id='"+item.link+"'>"+item.title+"</div><br>");
+		$("#"+item.link).on("tap",function(){fsdPage(item.title,item.page)});
     });
+    fsdinternalnav.links.forEach(function(item,index)
+    	{
+    	$("#"+item.link).on("tap",function(){fsdPage(item.title,item.page)});
+    	}
+    	);
+    
 });
 
 								

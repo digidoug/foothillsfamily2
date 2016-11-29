@@ -15,10 +15,16 @@ var fsdinternalnav={"links":[
 {"link":"likefoot","title":"What do you like about working in Foothills?","page":"what-do-you-like-about-working-in-foothills"}
 ]};
 
+function menuFadeOut(menuid)
+{
+	$(menuid).animate({position:"fixed"});
+	$(menuid).animate({left:"-40px"},function(){$(menuid).hide();});
+}
 
-
-
-
+function menuFadeIn(menuid)
+{
+	
+}
 
 function fsdPage(pagename,pageid)
 {
@@ -26,8 +32,9 @@ function fsdPage(pagename,pageid)
 	{
 	    url: "http://www.fsd38.ab.ca/API.php/"+pageid,
 	    success: function(result){
-		$("#header").html(pagename);
-				    $("#settext").html(result.html);
+			menuFadeOut("#menufill");
+			$("#header").html(pagename);
+			$("#settext").html(result.html);
 	    }
 	    
 	}
