@@ -31,7 +31,8 @@
     </feature>
     <name>Foothills Family2</name>
     <description>
-		A sample Apache Cordova application that responds to the deviceready
+		A sample Apache Cordova application that responds to the
+		deviceready
 		event.
 	</description>
     <author email="thym-dev@eclipse.org" href="http://www.eclipse.org/thym">
