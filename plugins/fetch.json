@@ -54,5 +54,13 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-statusbar-hide-on-startup": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-statusbar-hide-on-startup@0.1.7"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
