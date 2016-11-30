@@ -2,11 +2,11 @@
 
 var fsdmenu={"links":[
     {"css":"apply","link":"apply","title":"How to Apply", "page":"careers-in-foothills"},
-    {"css":"ltbluebutton","link":"about","title":"About Us","page":"About"},
-    {"css":"ltbluebutton","link":"compstaffdev","title":"Comprehenshive Staff Development","page":"comprehensive-staff-development"},
-    {"css":"ltbluebutton","link":"engaged-learners","title":"Engaged Learners","page":"engaged-learners"},
-    {"css":"ltbluebutton","link":"student-voice","title":"Student Voice","page":"student-voice"},
-    {"css":"ltbluebutton","link":"wide-ranging","title":"Wide Ranging Programming","page":"wide-ranging-programming"}
+    {"css":"","link":"about","title":"About Us","page":"About"},
+    {"css":"","link":"compstaffdev","title":"Comprehenshive Staff Development","page":"comprehensive-staff-development"},
+    {"css":"","link":"engaged-learners","title":"Engaged Learners","page":"engaged-learners"},
+    {"css":"","link":"student-voice","title":"Student Voice","page":"student-voice"},
+    {"css":"","link":"wide-ranging","title":"Wide Ranging Programming","page":"wide-ranging-programming"}
 ]};
 
 var fsdinternalnav={"links":[
@@ -17,13 +17,12 @@ var fsdinternalnav={"links":[
 
 function menuFadeOut(menuid)
 {
-	$(menuid).animate({position:"fixed"});
-	$(menuid).animate({left:"-40px"},function(){$(menuid).hide();});
+	document.getElementById("mySidenav").style.width = "0";
 }
 
 function menuFadeIn(menuid)
 {
-	
+	document.getElementById("mySidenav").style.width = "200px";
 }
 
 function fsdPage(pagename,pageid)
@@ -45,7 +44,9 @@ function fsdPage(pagename,pageid)
 $(document).ready(function()
 {
 
-    fsdmenu.links.forEach(function(item,index){
+    
+	menuFadeIn("Test");
+	fsdmenu.links.forEach(function(item,index){
 	
     	$("#menufill").append("<div class='"+item.css+"' id='"+item.link+"'>"+item.title+"</div><br>");
 		$("#"+item.link).on("tap",function(){fsdPage(item.title,item.page)});
@@ -55,6 +56,7 @@ $(document).ready(function()
     	$("#"+item.link).on("tap",function(){fsdPage(item.title,item.page)});
     	}
     	);
+    $(document).on("swiperight",menuFadeIn);
     
 });
 
