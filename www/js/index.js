@@ -2,8 +2,9 @@
 
 var fsdmenu={"links":[
     {"css":"apply","link":"apply","title":"How to Apply", "page":"careers-in-foothills"},
+
     {"css":"","link":"about","title":"About Us","page":"About"},
-    {"css":"","link":"compstaffdev","title":"Comprehenshive Staff Development","page":"comprehensive-staff-development"},
+    {"css":"","link":"workingfoothills","title":"Working In Foothills","page":"comprehensive-staff-development"},
     {"css":"","link":"engaged-learners","title":"Engaged Learners","page":"engaged-learners"},
     {"css":"","link":"student-voice","title":"Student Voice","page":"student-voice"},
     {"css":"","link":"wide-ranging","title":"Wide Ranging Programming","page":"wide-ranging-programming"}
@@ -27,7 +28,8 @@ function menuFadeIn(menuid)
 
 function fsdPage(pagename,pageid)
 {
-    $.ajax(
+    $("#homepage").hide();
+	$.ajax(
 	{
 	    url: "http://www.fsd38.ab.ca/API.php/"+pageid,
 	    success: function(result){
@@ -58,6 +60,7 @@ $(document).ready(function()
     	);
     $(document).on("swiperight",menuFadeIn);
     $(document).on("swipeleft",menuFadeOut);
+    menuFadeOut();
     
 });
 
