@@ -57,6 +57,7 @@ $(document).ready(function()
     	}
     	);
     $(document).on("swiperight",menuFadeIn);
+    $(document).on("swipeleft",menuFadeOut);
     
 });
 
