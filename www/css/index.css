@@ -36,11 +36,24 @@
   opacity: 0.85;
   box-shadow: 0.3 0.3 0.8 #010101;
 }
+.dkbutton {
+  background: #111;
+  color: #fff;
+  text-shadow: 1px 1px 1px #555555;
+  opacity: 0.85;
+  box-shadow: 0.3 0.3 0.8 #010101;
+}
 .listbox {
   box-shadow: 0.5 0.5 0.8 #010101;
 }
 .list {
   background: #0762A6;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #000000;
+  opacity: 0.85;
+  box-shadow: 0.3 0.3 0.8 #010101;
+}
+.sidetext {
   color: #ffffff;
   text-shadow: 2px 2px 2px #000000;
   opacity: 0.85;
