@@ -65,7 +65,7 @@ function lsBlog()
 				$("#settext").html("");
 				result.forEach(function(item,index)
 					{
-						$("#settext").append("<div class='dkbutton' id='blpost"+index+"'>"+item.title+"</div>");
+						$("#settext").append("<div class='dkbutton' id='blpost"+index+"'><img src='http://www.fsd38.ab.ca/image.php?t=news&s=50&f="+item.photo+"&siteid=1'></img>"+item.title+"</div>");
 						$("#blpost"+index).on("tap",function(){
 							$("#header").html(item.title);
 							$("#settext").html(item.article);
@@ -83,20 +83,24 @@ function lsNews()
 	menuFadeOut("");
 	$.ajax({
 			url: "http://www.fsd38.ab.ca/rss.php?id=3",
+			dataType: "html",
 			success: function(result){
 				$("#header").html("Foothills News");
 				$("#settext").html("");
-				result.forEach(function(item,index)
+				result.channel.forEach(function(item,index)
 					{
-						$("#settext").append("<div class='dkbutton' id='blpost"+index+"'>"+item.title+"</div>");
-						$("#blpost"+index).on("tap",function(){
-							$("#header").html(item.title);
-							$("#settext").html(item.article);
+						$("#settext").append("<div class='dkbutton' id='npost"+index+"'>"+item.title+"</div>");
+						$("#npost"+index).on("tap",function(){
+						$("#header").html(item.title);
+						$("#settext").html(item.article);
 						});
+						
 					}
 					);
 				
-	}
+				
+	},
+				error:function(exception){alert('Exeption:'+exception.toString());}
 	
 	});
 }
