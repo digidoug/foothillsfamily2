@@ -65,7 +65,7 @@ function lsBlog()
 				$("#settext").html("");
 				result.forEach(function(item,index)
 					{
-						$("#settext").append("<div class='dkbutton' id='blpost"+index+"'><img src='http://www.fsd38.ab.ca/image.php?t=news&s=50&f="+item.photo+"&siteid=1'></img>"+item.title+"</div>");
+						$("#settext").append("<div class='dkbutton' id='blpost"+index+"'><img align='left' src='http://www.fsd38.ab.ca/image.php?t=news&s=40&f="+item.photo+"&siteid=1'></img>"+item.title+"</div>");
 						$("#blpost"+index).on("tap",function(){
 							$("#header").html(item.title);
 							$("#settext").html(item.article);
@@ -87,9 +87,10 @@ function lsNews()
 			success: function(result){
 				$("#header").html("Foothills News");
 				$("#settext").html("");
-				for(var counter=0;counter<result.items.length;i++)
+				alert(result.title);
+				for(var counter=0;counter<result.items.length;counter++)
 					{
-						var item=result.channel[counter];
+						var item=result.items[counter];
 						$("#settext").append("<div class='dkbutton' id='npost"+counter+"'>"+item.title+"</div>");
 						$("#npost"+counter).on("tap",function(){
 						$("#header").html(item.title);
