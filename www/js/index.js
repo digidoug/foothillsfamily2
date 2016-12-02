@@ -81,22 +81,24 @@ function lsBlog()
 function lsNews()
 {
 	menuFadeOut("");
-	$.ajax({
+	$.getFeed({
 			url: "http://www.fsd38.ab.ca/rss.php?id=3",
 			dataType: "html",
 			success: function(result){
 				$("#header").html("Foothills News");
 				$("#settext").html("");
-				result.channel.forEach(function(item,index)
+				for(var counter=0;counter<result.items.length;i++)
 					{
-						$("#settext").append("<div class='dkbutton' id='npost"+index+"'>"+item.title+"</div>");
-						$("#npost"+index).on("tap",function(){
+						var item=result.channel[counter];
+						$("#settext").append("<div class='dkbutton' id='npost"+counter+"'>"+item.title+"</div>");
+						$("#npost"+counter).on("tap",function(){
 						$("#header").html(item.title);
 						$("#settext").html(item.article);
 						});
 						
 					}
-					);
+						
+					
 				
 				
 	},

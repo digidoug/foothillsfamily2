@@ -1,13 +1,16 @@
 
 
 var fsdmenu={"links":[
+                      
+    {"css":"whitebutton","link":"home","title":"Home", "page":""},
     {"css":"apply","link":"apply","title":"How to Apply", "page":"careers-in-foothills"},
-
-    {"css":"","link":"about","title":"About Us","page":"About"},
-    {"css":"","link":"workingfoothills","title":"Working In Foothills","page":"comprehensive-staff-development"},
-    {"css":"","link":"engaged-learners","title":"Engaged Learners","page":"engaged-learners"},
-    {"css":"","link":"student-voice","title":"Student Voice","page":"student-voice"},
-    {"css":"","link":"wide-ranging","title":"Wide Ranging Programming","page":"wide-ranging-programming"}
+    {"css":"sidetext","link":"about","title":"About Us","page":"About"},
+    {"css":"sidetext","link":"workingfoothills","title":"Working In Foothills","page":"comprehensive-staff-development"},
+    {"css":"sidetext","link":"engaged-learners","title":"Engaged Learners","page":"engaged-learners"},
+    {"css":"sidetext","link":"student-voice","title":"Student Voice","page":"student-voice"},
+    {"css":"sidetext","link":"wide-ranging","title":"Wide Ranging Programming","page":"wide-ranging-programming"},
+    {"css":"dkbutton","link":"blog","title":"Leadership Blog","page":""},
+    {"css":"dkbutton","link":"news","title":"News","page":""}
 ]};
 
 var fsdinternalnav={"links":[
@@ -43,25 +46,87 @@ function fsdPage(pagename,pageid)
     );
 }
 
+function goHome()
+{
+	menuFadeOut("");
+	$("#header").html("");
+	$("#settext").html("");
+	$("#homepage").fadeIn();
+}
+
+
+function lsBlog()
+{
+	menuFadeOut("");
+	$.ajax({
+			url: "http://www.fsd38.ab.ca/feed.php",
+			success: function(result){
+				$("#header").html("FSD Leadership Blog");
+				$("#settext").html("");
+				result.forEach(function(item,index)
+					{
+						$("#settext").append("<div class='dkbutton' id='blpost"+index+"'><img src='http://www.fsd38.ab.ca/image.php?t=news&s=50&f="+item.photo+"&siteid=1'></img>"+item.title+"</div>");
+						$("#blpost"+index).on("tap",function(){
+							$("#header").html(item.title);
+							$("#settext").html(item.article);
+						});
+					}
+					);
+				
+	}
+	
+	});
+}
+
+function lsNews()
+{
+	menuFadeOut("");
+	$.getFeed({
+			url: "http://www.fsd38.ab.ca/rss.php?id=3",
+			dataType: "html",
+			success: function(result){
+				$("#header").html("Foothills News");
+				$("#settext").html("");
+				for(var counter=0;counter<result.items.length;i++)
+					{
+						var item=result.channel[counter];
+						$("#settext").append("<div class='dkbutton' id='npost"+counter+"'>"+item.title+"</div>");
+						$("#npost"+counter).on("tap",function(){
+						$("#header").html(item.title);
+						$("#settext").html(item.article);
+						});
+						
+					}
+						
+					
+				
+				
+	},
+				error:function(exception){alert('Exeption:'+exception.toString());}
+	
+	});
+}
+
 $(document).ready(function()
 {
-
-    
 	menuFadeIn("Test");
 	fsdmenu.links.forEach(function(item,index){
 	
     	$("#menufill").append("<div class='"+item.css+"' id='"+item.link+"'>"+item.title+"</div><br>");
 		$("#"+item.link).on("tap",function(){fsdPage(item.title,item.page)});
     });
+	$("#home").on("tap",goHome);
     fsdinternalnav.links.forEach(function(item,index)
     	{
-    	$("#"+item.link).on("tap",function(){fsdPage(item.title,item.page)});
+    	$("#"+item.link).on("tap",function(){fsdPage(item.channel.title,item.channel.description)});
     	}
     	);
     $(document).on("swiperight",menuFadeIn);
     $(document).on("swipeleft",menuFadeOut);
     menuFadeOut();
-    
+    $("#home").on("tap",goHome);
+    $("#blog").on("tap",lsBlog);
+    $("#news").on("tap",lsNews);
 });
 
 								
