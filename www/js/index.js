@@ -97,31 +97,36 @@ function goHome() {
 
 function lsBlog() {
 	menuFadeOut("");
-	$
-			.ajax({
-				url : "http://www.fsd38.ab.ca/feed.php",
-				success : function(result) {
-					$("#header").html("FSD Leadership Blog");
-					$("#settext").html("");
-					result
-							.forEach(function(item, index) {
-								$("#settext")
-										.append(
-												"<div class='dkbutton' id='blpost"
-														+ index
-														+ "'><img align='left' src='http://www.fsd38.ab.ca/image.php?t=news&s=40&f="
-														+ item.photo
-														+ "&siteid=1'></img>"
-														+ item.title + "</div>");
-								$("#blpost" + index).on("tap", function() {
-									$("#header").html(item.title);
-									$("#settext").html(item.article);
-								});
-							});
+	$("#header").html("Leadership Blog");
+	var request=$.get("http://www.fsd38.ab.ca/rss.php?id=71");
+	request.success(function(data) {
 
-				}
+			
+			var $XML = $(data);
+			$XML.find("item").each(
+					function() {
 
-			});
+						var $this = $(this), item = {
+							title : $this.find("title").text(),
+							link : $this.find("link").text(),
+							description : $this.find("description").text()
+
+						};
+
+						$("#settext").append(
+								"<div class='dkbutton'>" + item.title
+										+ "</div>");
+
+					});
+
+		});
+	request.error(function(jqXHR, textStatus, errorThrown){
+		alert(errorThrown);
+	}
+	)
+						
+	
+
 }
 
 function lsNews() {
@@ -155,6 +160,7 @@ function lsNews() {
 
 $(document).ready(
 		function() {
+
 			menuFadeIn("Test");
 			fsdmenu.links.forEach(function(item, index) {
 
