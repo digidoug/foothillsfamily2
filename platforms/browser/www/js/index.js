@@ -98,41 +98,27 @@ function goHome() {
 function lsBlog() {
 	menuFadeOut("");
 	$("#header").html("Leadership Blog");
-	var request=$.get("http://www.fsd38.ab.ca/rss.php?id=71");
-	request.success(function(data) {
-
-			
-			var $XML = $(data);
-			$XML.find("item").each(
-					function() {
-
-						var $this = $(this), item = {
-							title : $this.find("title").text(),
-							link : $this.find("link").text(),
-							description : $this.find("description").text()
-
-						};
-
-						$("#settext").append(
-								"<div class='dkbutton'>" + item.title
-										+ "</div>");
-
-					});
-
-		});
-	request.error(function(jqXHR, textStatus, errorThrown){
-		alert(errorThrown);
-	}
-	)
-						
+	$.ajax({
+		url: "http://www.fsd38.ab.ca/rss.php?id=71",
+		dataType: "xml",
+		success: function(result){
+			alert("Good");
+	},
+		error: function(result){
+			alert(result.status);
+		}
 	
-
+	
+	}
+	
+		
+		);
+	
 }
 
 function lsNews() {
 	menuFadeOut("");
-	$
-			.ajax({
+	$.ajax({
 				url : "http://feeds.feedburner.com/FoothillsSchoolDivision",
 				success : function(result) {
 					$("#header").html("FSD News");

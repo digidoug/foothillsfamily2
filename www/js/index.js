@@ -95,72 +95,58 @@ function goHome() {
 	$("#homepage").fadeIn();
 }
 
-function lsBlog() {
+
+
+function rssFeed(blogid,bltitle)
+{
 	menuFadeOut("");
-	$("#header").html("Leadership Blog");
-	var request=$.get("http://www.fsd38.ab.ca/rss.php?id=71");
-	request.success(function(data) {
 
-			
-			var $XML = $(data);
-			$XML.find("item").each(
-					function() {
+	$.ajax({
+		url: "https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://www.fsd38.ab.ca/rss.php%3fid%3d"+blogid,
+		type:"GET",
+		dataType:"jsonp",
 
-						var $this = $(this), item = {
-							title : $this.find("title").text(),
-							link : $this.find("link").text(),
-							description : $this.find("description").text()
-
-						};
-
-						$("#settext").append(
-								"<div class='dkbutton'>" + item.title
-										+ "</div>");
-
+		success: function(result){
+			$("#header").html(bltitle);
+			$("#settext").html("");
+			result.responseData.feed.entries.forEach(function(item,index) {
+				$("#settext").append(
+					"<div class='dkbutton' id='blpost"+index+"'>"+item.title+"</div>"
+					);
+				$("#blpost"+index).on("tap",function()
+					{
+						$("#header").html(item.title);
+						$("#settext").html(item.content);
 					});
-
-		});
-	request.error(function(jqXHR, textStatus, errorThrown){
-		alert(errorThrown);
-	}
-	)
-						
+					
+			});
+			
+	},
+		error: function(result){
+			$("#settext").append(JSON.stringify(result));
+		}
 	
-
+	
+	}
+	
+		
+		);
+	
 }
 
 function lsNews() {
-	menuFadeOut("");
-	$
-			.ajax({
-				url : "http://feeds.feedburner.com/FoothillsSchoolDivision",
-				success : function(result) {
-					$("#header").html("FSD News");
-					$("#settext").html("");
-					result.channel
-							.forEach(function(item, index) {
-								$("#settext")
-										.append(
-												"<div class='dkbutton' id='npost"
-														+ index
-														+ "'><img align='left' src='http://www.fsd38.ab.ca/image.php?t=news&s=40&f="
-														+ item.photo
-														+ "&siteid=1'></img>"
-														+ item.title + "</div>");
-								$("#npost" + index).on("tap", function() {
-									$("#header").html(item.title);
-									$("#settext").html(item.article);
-								});
-							});
-
-				}
-
-			});
+	rssFeed("1","FSD News");
 }
+
+function lsBlog() 
+{
+	rssFeed("71","FSD Leadership Blog");
+	}
+
 
 $(document).ready(
 		function() {
-
+			$.cors=true;
 			menuFadeIn("Test");
 			fsdmenu.links.forEach(function(item, index) {
 
