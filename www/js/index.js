@@ -135,7 +135,7 @@ function rssFeed(blogid,bltitle)
 }
 
 function lsNews() {
-	rssFeed("1","FSD News");
+	rssFeed("3","FSD News");
 }
 
 function lsBlog() 
