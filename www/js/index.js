@@ -116,7 +116,7 @@ function rssFeed(blogid,bltitle)
 				$("#blpost"+index).on("tap",function()
 					{
 						$("#header").html(item.title);
-						$("#settext").html(item.content);
+						$("#settext").html("<fixed>"+item.content+"</fixed>");
 					});
 					
 			});
