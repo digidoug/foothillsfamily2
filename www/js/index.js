@@ -96,8 +96,22 @@ function goHome() {
 }
 
 
-
 function rssFeed(blogid,bltitle)
+{
+	menuFadeOut("");
+	alert("before get");
+	$.get("http://www.fsd38.ab.ca/rss.php%3fid%3d"+blogid,function(xml){
+		alert("in get");
+		var fullfeed = $.xml2json(xml);
+		alert(fullfeed.title);
+		}
+		
+	).fail(function(out){alert("Broke"+this.responseJSON());});
+	
+}
+
+
+function rssFeedold(blogid,bltitle)
 {
 	menuFadeOut("");
 
