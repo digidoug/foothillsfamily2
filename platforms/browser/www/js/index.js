@@ -115,29 +115,28 @@ function rssFeed(blogid,bltitle)
 	menuFadeOut("");
 
 	$.ajax({
-		url: "/xml/out.xml",
+		url: "http://www.fsd38.ab.ca/rss.php?id="+blogid,
 		type:"GET",
 		dataType:"xml",
 
 		success: function(result){
-			alert(result.doctype);
+			var $xml=$(result);
 			$("#header").html(bltitle);
-			$("#settext").html(result.responseData);
-			result.responseData.item.forEach(function(item,index) {
-				$("#settext").append(
-					"<div class='dkbutton' id='blpost"+index+"'>"+item.title+"</div>"
-					);
-				$("#blpost"+index).on("tap",function()
-					{
-						$("#header").html(item.title);
-						$("#settext").html(item.content);
-					});
-					
-			});
-			
-	},
+			$xml.find("item").each(function() {
+		        var $this = $(this),
+		            item = {
+		                title: $this.find("title").text(),
+		                link: $this.find("link").text(),
+		                description: $this.find("description").text(),
+		                pubDate: $this.find("pubDate").text(),
+		                author: $this.find("author").text()
+		        }
+		        $("#settext").append("<div class='dkbutton' id='blog'>"+item.title+"</div>");
+		    });
+
+			},
 		error: function(result){
-			alert("It Broke!");
+			alert(this.url+" Broke!");
 			$("#settext").append(JSON.stringify(result));
 		}
 	
