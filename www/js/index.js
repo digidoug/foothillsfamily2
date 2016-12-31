@@ -96,46 +96,48 @@ function goHome() {
 }
 
 
-function rssFeed(blogid,bltitle)
+function rssFeedold(blogid,bltitle)
 {
 	menuFadeOut("");
 	alert("before");
-	$.rss("http://www.fsd38.ab.ca/rss.php?id="+blogid, {
+	$.rss("/xml/out.xml", {
 	    limit: 3,
 	    layoutTemplate: '<ul class="inline">{entries}</ul>',
 	    entryTemplate: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{shortBodyPlain}</li>',
 	    success: function(){alert("itworked");},
 	    error: function(thatsucks){alert("oops"+thatsucks);}
-	})
+	});
 }
 
 
-function rssFeedold(blogid,bltitle)
+function rssFeed(blogid,bltitle)
 {
 	menuFadeOut("");
 
 	$.ajax({
-		url: "https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://www.fsd38.ab.ca/rss.php%3fid%3d"+blogid,
+		url: "/xml/out.xml",
 		type:"GET",
-		dataType:"jsonp",
+		dataType:"xml",
 
 		success: function(result){
+			alert(result.doctype);
 			$("#header").html(bltitle);
-			$("#settext").html("");
-			result.responseData.feed.entries.forEach(function(item,index) {
+			$("#settext").html(result.responseData);
+			result.responseData.item.forEach(function(item,index) {
 				$("#settext").append(
 					"<div class='dkbutton' id='blpost"+index+"'>"+item.title+"</div>"
 					);
 				$("#blpost"+index).on("tap",function()
 					{
 						$("#header").html(item.title);
-						$("#settext").html("<fixed>"+item.content+"</fixed>");
+						$("#settext").html(item.content);
 					});
 					
 			});
 			
 	},
 		error: function(result){
+			alert("It Broke!");
 			$("#settext").append(JSON.stringify(result));
 		}
 	
