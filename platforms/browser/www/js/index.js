@@ -115,12 +115,17 @@ function rssFeed(blogid,bltitle)
 	menuFadeOut("");
 
 	$.ajax({
-		url: "http://www.fsd38.ab.ca/rss.php?id="+blogid,
-		type:"GET",
+		url: "http://feeds.feedburner.com/FoothillsSchoolDivision?format=xml",
+	accepts:{
+        xml:"application/rss+xml"
+    },	
+	type:"GET",
 		dataType:"xml",
+		//async:true,
 
 		success: function(result){
 			var $xml=$(result);
+			alert("success");
 			$("#header").html(bltitle);
 			$xml.find("item").each(function() {
 		        var $this = $(this),

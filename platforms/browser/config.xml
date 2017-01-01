@@ -17,6 +17,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-navigation href="*" />
-    <preference name="StatusBarOverlaysWebView" value="false" />
-    <access origin="*" />
+    <access origin="http://205.204.88.185" subdomains="true" />
+    <access origin="*" subdomains="true" />
+    <access origin="http://www.fsd38.ab.ca" subdomains="true" />
 </widget>
