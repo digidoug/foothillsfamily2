@@ -109,13 +109,26 @@ function rssFeedold(blogid,bltitle)
 	});
 }
 
+function rssFeed1(blogid,bltitle)
+{
+	menuFadeOut("");
+	alert("Called");
+	$.get("http://feeds.feedburner.com/FoothillsSchoolDivision").done(function(data)
+		{
+			alert("in done");
+			$("#settext").html(data);
+		}
+		
+	);
+}
+
 
 function rssFeed(blogid,bltitle)
 {
 	menuFadeOut("");
 
 	$.ajax({
-		url: "http://feeds.feedburner.com/FoothillsSchoolDivision?format=xml",
+		url: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.fsd38.ab.ca%2Frss.php%3Fid%3D"+blogid+"%22&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",
 	accepts:{
         xml:"application/rss+xml"
     },	
@@ -125,10 +138,12 @@ function rssFeed(blogid,bltitle)
 
 		success: function(result){
 			var $xml=$(result);
-			alert("success");
+			var $counter=0;
 			$("#header").html(bltitle);
+			$("#settext").html("");
 			$xml.find("item").each(function() {
-		        var $this = $(this),
+		        $counter++;
+				var $this = $(this),
 		            item = {
 		                title: $this.find("title").text(),
 		                link: $this.find("link").text(),
@@ -136,8 +151,13 @@ function rssFeed(blogid,bltitle)
 		                pubDate: $this.find("pubDate").text(),
 		                author: $this.find("author").text()
 		        }
-		        $("#settext").append("<div class='dkbutton' id='blog'>"+item.title+"</div>");
-		    });
+		        $("#settext").append("<div class='dkbutton' id='blog"+$counter+"'>"+item.title+"</div>");
+				$("#blog"+$counter).on("tap",function(){
+					var $text=item.description;
+					$text=$text.replace(/\n/g,"<br>");
+					$("#settext").html($text);
+					});
+			});
 
 			},
 		error: function(result){

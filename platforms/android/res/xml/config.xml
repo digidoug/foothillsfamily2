@@ -25,7 +25,6 @@
 		Eclipse.org - Thym
 	</author>
     <content src="index.html" />
-    <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -33,7 +32,9 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-navigation href="*" />
+    <access origin="http://205.204.88.185" subdomains="true" />
+    <access origin="*" subdomains="true" />
+    <access origin="http://www.fsd38.ab.ca" subdomains="true" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="StatusBarOverlaysWebView" value="false" />
 </widget>
