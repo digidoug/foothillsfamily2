@@ -95,71 +95,71 @@ function goHome() {
 	$("#homepage").fadeIn();
 }
 
-
-
-function rssFeed(blogid,bltitle)
-{
+function rssFeed(blogid, bltitle) {
 	menuFadeOut("");
 
-	$.ajax({
-		url: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.fsd38.ab.ca%2Frss.php%3Fid%3D"+blogid+"%22&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",
-	accepts:{
-        xml:"application/rss+xml"
-    },	
-	type:"GET",
-		dataType:"xml",
-		//async:true,
+	$
+			.ajax({
+				url : "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.fsd38.ab.ca%2Frss.php%3Fid%3D"
+						+ blogid
+						+ "%22&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",
+				accepts : {
+					xml : "application/rss+xml"
+				},
+				type : "GET",
+				dataType : "xml",
+				// async:true,
 
-		success: function(result){
-			var $xml=$(result);
-			var $counter=0;
-			$("#header").html(bltitle);
-			$("#settext").html("");
-			$xml.find("item").each(function() {
-		        $counter++;
-				var $this = $(this),
-		            item = {
-		                title: $this.find("title").text(),
-		                link: $this.find("link").text(),
-		                description: $this.find("description").text(),
-		                pubDate: $this.find("pubDate").text(),
-		                author: $this.find("author").text()
-		        }
-		        $("#settext").append("<div class='dkbutton' id='blog"+$counter+"'>"+item.title+"</div>");
-				$("#blog"+$counter).on("tap",function(){
-					var $text=item.description;
-					$text=$text.replace(/\n/g,"<br>");
-					$("#settext").html($text);
-					});
-			});
+				success : function(result) {
+					var $xml = $(result);
+					var $counter = 0;
+					$("#header").html(bltitle);
+					$("#settext").html("");
+					$xml.find("item").each(
+							function() {
+								$counter++;
+								var $this = $(this), item = {
+									title : $this.find("title").text(),
+									link : $this.find("link").text(),
+									description : $this.find("description")
+											.text(),
+									pubDate : $this.find("pubDate").text(),
+									author : $this.find("author").text()
+								}
+								$("#settext").append(
+										"<div class='dkbutton' id='blog"
+												+ $counter + "'>" + item.title
+												+ "</div>");
+								$("#blog" + $counter).on("tap", function() {
+									var $text = item.description;
+									$text = $text.replace(/\n/g, "<br>");
+									$("#settext").html($text);
+								});
+							});
 
-			},
-		error: function(result){
-			alert("Feed Unavailable, Sorry");
-			goHome();
-		}
-	
-	
-	}
-	
-		
-		);
-	
+				},
+				error : function(result) {
+					alert("Feed Unavailable, Sorry");
+					goHome();
+				}
+
+			}
+
+			);
+
 }
 
 function lsNews() {
-	rssFeed("3","FSD News");
+	rssFeed("3", "FSD News");
 }
 
-function lsBlog() 
-{
-	rssFeed("71","FSD Leadership Blog");
-	}
-
+function lsBlog() {
+	rssFeed("71", "FSD Leadership Blog");
+}
 
 $(document).ready(
 		function() {
-			$.cors=true;
+			$.cors = true;
 			menuFadeIn("Test");
 			fsdmenu.links.forEach(function(item, index) {
 
