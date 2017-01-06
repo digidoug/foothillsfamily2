@@ -46,7 +46,14 @@ var fsdmenu = {
 		"link" : "news",
 		"title" : "News",
 		"page" : ""
-	} ]
+	}, {
+		"css" : "whitebutton",
+		"link" : "aboutapp",
+		"title" : "About App",
+		"page" : ""
+	}
+
+	]
 };
 
 var fsdinternalnav = {
@@ -64,6 +71,13 @@ var fsdinternalnav = {
 		"page" : "what-do-you-like-about-working-in-foothills"
 	} ]
 };
+
+function aboutApp() {
+	menuFadeOut();
+	$("#header").html("About This App");
+	$("#settext").html("<h2>Join the Foothills Family</h2><p><strong>v. 2.0.0<br>Copyright 2014-2017<br>All Rights Reserved</strong></p>                          <p>Foothills School Division<br>P.O. Box 5700<br>120 5th Ave W.&nbsp;<br>High River, AB T1V 1M7<br>http://www.fsd38.ab.ca<br>(403)652-3001</p>");
+
+}
 
 function menuFadeOut(menuid) {
 	document.getElementById("mySidenav").style.width = "0";
@@ -95,97 +109,71 @@ function goHome() {
 	$("#homepage").fadeIn();
 }
 
-
-function rssFeedold(blogid,bltitle)
-{
-	menuFadeOut("");
-	alert("before");
-	$.rss("/xml/out.xml", {
-	    limit: 3,
-	    layoutTemplate: '<ul class="inline">{entries}</ul>',
-	    entryTemplate: '<li><a href="{url}">[{author}@{date}] {title}</a><br/>{shortBodyPlain}</li>',
-	    success: function(){alert("itworked");},
-	    error: function(thatsucks){alert("oops"+thatsucks);}
-	});
-}
-
-function rssFeed1(blogid,bltitle)
-{
-	menuFadeOut("");
-	alert("Called");
-	$.get("http://feeds.feedburner.com/FoothillsSchoolDivision").done(function(data)
-		{
-			alert("in done");
-			$("#settext").html(data);
-		}
-		
-	);
-}
-
-
-function rssFeed(blogid,bltitle)
-{
+function rssFeed(blogid, bltitle) {
 	menuFadeOut("");
 
-	$.ajax({
-		url: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.fsd38.ab.ca%2Frss.php%3Fid%3D"+blogid+"%22&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",
-	accepts:{
-        xml:"application/rss+xml"
-    },	
-	type:"GET",
-		dataType:"xml",
-		//async:true,
+	$
+			.ajax({
+				url : "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.fsd38.ab.ca%2Frss.php%3Fid%3D"
+						+ blogid
+						+ "%22&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",
+				accepts : {
+					xml : "application/rss+xml"
+				},
+				type : "GET",
+				dataType : "xml",
+				// async:true,
 
-		success: function(result){
-			var $xml=$(result);
-			var $counter=0;
-			$("#header").html(bltitle);
-			$("#settext").html("");
-			$xml.find("item").each(function() {
-		        $counter++;
-				var $this = $(this),
-		            item = {
-		                title: $this.find("title").text(),
-		                link: $this.find("link").text(),
-		                description: $this.find("description").text(),
-		                pubDate: $this.find("pubDate").text(),
-		                author: $this.find("author").text()
-		        }
-		        $("#settext").append("<div class='dkbutton' id='blog"+$counter+"'>"+item.title+"</div>");
-				$("#blog"+$counter).on("tap",function(){
-					var $text=item.description;
-					$text=$text.replace(/\n/g,"<br>");
-					$("#settext").html($text);
-					});
-			});
+				success : function(result) {
+					var $xml = $(result);
+					var $counter = 0;
+					$("#header").html(bltitle);
+					$("#settext").html("");
+					$xml.find("item").each(
+							function() {
+								$counter++;
+								var $this = $(this), item = {
+									title : $this.find("title").text(),
+									link : $this.find("link").text(),
+									description : $this.find("description")
+											.text(),
+									pubDate : $this.find("pubDate").text(),
+									author : $this.find("author").text()
+								}
+								$("#settext").append(
+										"<div class='dkbutton' id='blog"
+												+ $counter + "'>" + item.title
+												+ "</div>");
+								$("#blog" + $counter).on("tap", function() {
+									var $text = item.description;
+									$text = $text.replace(/\n/g, "<br>");
+									$("#settext").html($text);
+								});
+							});
 
-			},
-		error: function(result){
-			alert(this.url+" Broke!");
-			$("#settext").append(JSON.stringify(result));
-		}
-	
-	
-	}
-	
-		
-		);
-	
+				},
+				error : function(result) {
+					alert("Feed Unavailable, Sorry");
+					goHome();
+				}
+
+			}
+
+			);
+
 }
 
 function lsNews() {
-	rssFeed("3","FSD News");
+	rssFeed("3", "FSD News");
 }
 
-function lsBlog() 
-{
-	rssFeed("71","FSD Leadership Blog");
-	}
-
+function lsBlog() {
+	rssFeed("71", "FSD Leadership Blog");
+}
 
 $(document).ready(
 		function() {
-			$.cors=true;
+			$.cors = true;
 			menuFadeIn("Test");
 			fsdmenu.links.forEach(function(item, index) {
 
@@ -205,7 +193,10 @@ $(document).ready(
 			$(document).on("swiperight", menuFadeIn);
 			$(document).on("swipeleft", menuFadeOut);
 			menuFadeOut();
+
 			$("#home").on("tap", goHome);
 			$("#blog").on("tap", lsBlog);
 			$("#news").on("tap", lsNews);
+			$("#menuicon").on("tap", menuFadeIn);
+			$("#aboutapp").on("tap", aboutApp);
 		});

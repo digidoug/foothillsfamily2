@@ -46,7 +46,14 @@ var fsdmenu = {
 		"link" : "news",
 		"title" : "News",
 		"page" : ""
-	} ]
+	}, {
+		"css" : "whitebutton",
+		"link" : "aboutapp",
+		"title" : "About App",
+		"page" : ""
+	}
+
+	]
 };
 
 var fsdinternalnav = {
@@ -64,6 +71,13 @@ var fsdinternalnav = {
 		"page" : "what-do-you-like-about-working-in-foothills"
 	} ]
 };
+
+function aboutApp() {
+	menuFadeOut();
+	$("#header").html("About This App");
+	$("#settext").html("<h2>Join the Foothills Family</h2><p><strong>v. 2.0.0<br>Copyright 2014-2017<br>All Rights Reserved</strong></p>                          <p>Foothills School Division<br>P.O. Box 5700<br>120 5th Ave W.&nbsp;<br>High River, AB T1V 1M7<br>http://www.fsd38.ab.ca<br>(403)652-3001</p>");
+
+}
 
 function menuFadeOut(menuid) {
 	document.getElementById("mySidenav").style.width = "0";
@@ -179,7 +193,10 @@ $(document).ready(
 			$(document).on("swiperight", menuFadeIn);
 			$(document).on("swipeleft", menuFadeOut);
 			menuFadeOut();
+
 			$("#home").on("tap", goHome);
 			$("#blog").on("tap", lsBlog);
 			$("#news").on("tap", lsNews);
+			$("#menuicon").on("tap", menuFadeIn);
+			$("#aboutapp").on("tap", aboutApp);
 		});
