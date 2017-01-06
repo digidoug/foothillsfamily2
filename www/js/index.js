@@ -148,6 +148,7 @@ function rssFeed(blogid, bltitle) {
 									var $text = item.description;
 									$text = $text.replace(/\n/g, "<br>");
 									$("#settext").html($text);
+                                                                        $("#header").html(item.title);
 								});
 							});
 
