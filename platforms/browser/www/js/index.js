@@ -41,12 +41,12 @@ var fsdmenu = {
 		"link" : "blog",
 		"title" : "Leadership Blog",
 		"page" : ""
-	}, {
+	},/* {
 		"css" : "dkbutton",
 		"link" : "news",
 		"title" : "News",
 		"page" : ""
-	}, {
+	},*/ {
 		"css" : "whitebutton",
 		"link" : "aboutapp",
 		"title" : "About App",
@@ -148,6 +148,7 @@ function rssFeed(blogid, bltitle) {
 									var $text = item.description;
 									$text = $text.replace(/\n/g, "<br>");
 									$("#settext").html($text);
+                                                                        $("#header").html(item.title);
 								});
 							});
 

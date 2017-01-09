@@ -28,7 +28,7 @@
 		<allow-intent href="itms:*" />
 		<allow-intent href="itms-apps:*" />
 	</platform>
-	<plugin name="cordova-inappbrowser" spec="~1.0.6" />
+	<plugin name="cordova-inappbrowser" spec="~1.6.1" />
 	<plugin name="cordova-plugin-statusbar" spec="~2.2.0" />
 
 	<engine name="android" spec="6.2.0-nightly.2016.11.23.3bfeda4a" />
