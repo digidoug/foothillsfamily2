@@ -16,13 +16,12 @@
 		3047A5131AB8059700498E2A /* build-release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5101AB8059700498E2A /* build-release.xcconfig */; };
 		3047A5141AB8059700498E2A /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5111AB8059700498E2A /* build.xcconfig */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
-		1F5794E15AD9438F8C47F8AF /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AB71D3674C594460A7EA6B1D /* CDVInAppBrowser.m */; };
 		06BCD01CBB2C4D33AE07FF1A /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A137A89177B41F796ECD4DB /* CDVFile.m */; };
 		0FBF79EC50C140A98D4AEEF3 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 896FF7B3D22E4EA48A4D1170 /* CDVLocalFilesystem.m */; };
 		FC5032BE4E0D4A898119F350 /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = D1662F30095446F68CE27113 /* CDVAssetLibraryFilesystem.m */; };
 		82866350D25346F082343736 /* CDVFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAD3531D5C84E9E8A29E0AE /* CDVFileTransfer.m */; };
-		5600231A698A476DA61BF050 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = B599A14B08FF459E8EE32A17 /* CDVInAppBrowser.m */; };
 		7E50C9FA49E84777871EB9A3 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440B1478974429DBFBD5EA3 /* CDVStatusBar.m */; };
+		81CB2C7DC57044B5B4115250 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3295BC54C6264620B4390971 /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +62,6 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Join the Foothills Family/config.xml"; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		AB71D3674C594460A7EA6B1D /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		FAA3554643B2430783AAE824 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		8A137A89177B41F796ECD4DB /* CDVFile.m */ = {isa = PBXFileReference; name = "CDVFile.m"; path = "cordova-plugin-file/CDVFile.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		896FF7B3D22E4EA48A4D1170 /* CDVLocalFilesystem.m */ = {isa = PBXFileReference; name = "CDVLocalFilesystem.m"; path = "cordova-plugin-file/CDVLocalFilesystem.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		D1662F30095446F68CE27113 /* CDVAssetLibraryFilesystem.m */ = {isa = PBXFileReference; name = "CDVAssetLibraryFilesystem.m"; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
@@ -73,10 +70,10 @@
 		D9C165D94F75447AAD008C2C /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; name = "CDVAssetLibraryFilesystem.h"; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		DCAD3531D5C84E9E8A29E0AE /* CDVFileTransfer.m */ = {isa = PBXFileReference; name = "CDVFileTransfer.m"; path = "cordova-plugin-file-transfer/CDVFileTransfer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		892E710C24F24853A58D468A /* CDVFileTransfer.h */ = {isa = PBXFileReference; name = "CDVFileTransfer.h"; path = "cordova-plugin-file-transfer/CDVFileTransfer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		B599A14B08FF459E8EE32A17 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		763C808E6D0A46169C95F324 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		8440B1478974429DBFBD5EA3 /* CDVStatusBar.m */ = {isa = PBXFileReference; name = "CDVStatusBar.m"; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		D62794EF721D485EBE6CD359 /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		3295BC54C6264620B4390971 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		3D1DCF01FB004D52BF5758A6 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +177,6 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				AB71D3674C594460A7EA6B1D /* CDVInAppBrowser.m */,
-				FAA3554643B2430783AAE824 /* CDVInAppBrowser.h */,
 				8A137A89177B41F796ECD4DB /* CDVFile.m */,
 				896FF7B3D22E4EA48A4D1170 /* CDVLocalFilesystem.m */,
 				D1662F30095446F68CE27113 /* CDVAssetLibraryFilesystem.m */,
@@ -190,10 +185,10 @@
 				D9C165D94F75447AAD008C2C /* CDVAssetLibraryFilesystem.h */,
 				DCAD3531D5C84E9E8A29E0AE /* CDVFileTransfer.m */,
 				892E710C24F24853A58D468A /* CDVFileTransfer.h */,
-				B599A14B08FF459E8EE32A17 /* CDVInAppBrowser.m */,
-				763C808E6D0A46169C95F324 /* CDVInAppBrowser.h */,
 				8440B1478974429DBFBD5EA3 /* CDVStatusBar.m */,
 				D62794EF721D485EBE6CD359 /* CDVStatusBar.h */,
+				3295BC54C6264620B4390971 /* CDVInAppBrowser.m */,
+				3D1DCF01FB004D52BF5758A6 /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = "Join the Foothills Family/Plugins";
@@ -306,13 +301,12 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				1F5794E15AD9438F8C47F8AF /* CDVInAppBrowser.m in Sources */,
 				06BCD01CBB2C4D33AE07FF1A /* CDVFile.m in Sources */,
 				0FBF79EC50C140A98D4AEEF3 /* CDVLocalFilesystem.m in Sources */,
 				FC5032BE4E0D4A898119F350 /* CDVAssetLibraryFilesystem.m in Sources */,
 				82866350D25346F082343736 /* CDVFileTransfer.m in Sources */,
-				5600231A698A476DA61BF050 /* CDVInAppBrowser.m in Sources */,
 				7E50C9FA49E84777871EB9A3 /* CDVStatusBar.m in Sources */,
+				81CB2C7DC57044B5B4115250 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

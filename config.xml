@@ -33,5 +33,4 @@
     <plugin name="cordova-plugin-file-transfer" spec="~1.6.0" />
     <plugin name="cordova-plugin-statusbar" spec="~2.2.0" />
     <plugin name="cordova-plugin-statusbar-hide-on-startup" spec="~0.1.7" />
-    <plugin name="cordova-inappbrowser" spec="~1.0.6" />
 </widget>
