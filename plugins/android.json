@@ -7,28 +7,28 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-inappbrowser": {
-            "PACKAGE_NAME": "foothills.family2"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "foothills.family2"
-        },
         "cordova-plugin-file": {
-            "PACKAGE_NAME": "foothills.family2"
+            "PACKAGE_NAME": "com.fsd38.empserv"
         },
         "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "foothills.family2"
+            "PACKAGE_NAME": "com.fsd38.empserv"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.fsd38.empserv"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "foothills.family2"
+            "PACKAGE_NAME": "com.fsd38.empserv"
         },
         "cordova-plugin-statusbar-hide-on-startup": {
-            "PACKAGE_NAME": "foothills.family2"
+            "PACKAGE_NAME": "com.fsd38.empserv"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.fsd38.empserv"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "foothills.family2"
+            "PACKAGE_NAME": "com.fsd38.empserv"
         }
     }
 }

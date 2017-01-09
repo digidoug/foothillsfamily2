@@ -7,12 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-inappbrowser": {
-            "PACKAGE_NAME": "foothills.family2"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "foothills.family2"
-        },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "foothills.family2"
         },
@@ -27,6 +21,9 @@
         },
         "cordova-plugin-statusbar-hide-on-startup": {
             "PACKAGE_NAME": "foothills.family2"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.fsd38.empserv"
         }
     },
     "dependent_plugins": {

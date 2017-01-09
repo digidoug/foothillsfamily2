@@ -8,7 +8,7 @@
 <meta name="msapplication-tap-highlight" content="no">
 <meta name="viewport"
 	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-<meta name="Access-Control-Allow-Origin" content="*">
+<meta name="Access-Control-Allow-Origin" content="http://www.fsd38.ab.ca">
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova_plugins.js"></script>
 <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
@@ -17,13 +17,20 @@
 <script src="js/jquery.jfeed.js"></script>
 <script src="js/jquery.jfeed.pack.js"></script>
 <script src="js/index.js"></script>
+<script src="js/jquery.rss.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/index.css"></link>
 
 </head>
 
 <body>
-	<div data-role="header">
-		<center>Join the Foothills Family</center>
+  <div data-role="header">
+    <table width=100%>
+      <tr>
+	<td width="25px"><div id="menuicon"><img height="25px" src="img/menu.png"></div></td>
+	<td><center>Join the Foothills Family</center></td>
+	
+	</tr>
+      </table>
 	</div>
 	<div class="sidenav" id="mySidenav">
 		<div id="menufill"></div>
