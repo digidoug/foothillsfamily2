@@ -41,12 +41,12 @@ var fsdmenu = {
 		"link" : "blog",
 		"title" : "Leadership Blog",
 		"page" : ""
-	}, {
+	},/* {
 		"css" : "dkbutton",
 		"link" : "news",
 		"title" : "News",
 		"page" : ""
-	}, {
+	},*/ {
 		"css" : "whitebutton",
 		"link" : "aboutapp",
 		"title" : "About App",
