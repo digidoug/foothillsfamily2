@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="20010" id="com.fsd38.empserv2" version="2.0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="20010" id="com.fsd38.empserv" version="2.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
@@ -49,6 +49,22 @@
     <access origin="http://www.fsd38.ab.ca" subdomains="true" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
+    <icon height="180" src="icons/fsd180.png" width="180" />
+    <icon height="60" src="icons/fsd60.png" width="60" />
+    <icon height="120" src="icons/fsd120.png" width="120" />
+    <icon height="76" src="icons/fsd76.png" width="76" />
+    <icon height="152" src="icons/fsd152.png" width="152" />
+    <icon height="40" src="icons/fsd40.png" width="40" />
+    <icon height="80" src="icons/fsd80.png" width="80" />
+    <icon height="57" src="icons/fsd57.png" width="57" />
+    <icon height="114" src="icons/fsd144.png" width="114" />
+    <icon height="72" src="icons/fsd72.png" width="72" />
+    <icon height="144" src="icons/fsd144.png" width="144" />
+    <icon height="29" src="icons/fsd29.png" width="29" />
+    <icon height="58" src="icons/fsd58.png" width="58" />
+    <icon height="50" src="icons/fsd50.png" width="50" />
+    <icon height="100" src="icons/fsd100.png" width="100" />
+    <icon height="167" src="icons/fsd167.png" width="167" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
     <preference name="DisallowOverscroll" value="false" />
