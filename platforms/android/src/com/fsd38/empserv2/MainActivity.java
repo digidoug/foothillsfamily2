@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.fsd38.empserv;
+package com.fsd38.empserv2;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
