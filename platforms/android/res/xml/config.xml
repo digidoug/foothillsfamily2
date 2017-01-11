@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.fsd38.empserv2" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="20010" id="com.fsd38.empserv2" version="2.0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />
         <param name="onload" value="true" />
@@ -38,5 +38,11 @@
     <access origin="*" subdomains="true" />
     <access origin="http://www.fsd38.ab.ca" subdomains="true" />
     <allow-intent href="market:*" />
+    <icon density="ldpi" src="icons/fsd36.png" />
+    <icon density="mdpi" src="icons/fsd48.png" />
+    <icon density="hdpi" src="icons/fsd72.png" />
+    <icon density="xhdpi" src="icons/fsd96.png" />
+    <icon density="xxhdpi" src="icons/fsd144.png" />
+    <icon density="xxxhdpi" src="icons/fsd192.png" />
     <preference name="loglevel" value="DEBUG" />
 </widget>
