@@ -193,7 +193,7 @@ $(document).ready(
 			});
 			$(document).on("swiperight", menuFadeIn);
 			$(document).on("swipeleft", menuFadeOut);
-			menuFadeOut();
+			//menuFadeOut();
 
 			$("#home").on("tap", goHome);
 			$("#blog").on("tap", lsBlog);
