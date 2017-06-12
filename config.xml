@@ -23,6 +23,7 @@
         <icon density="xhdpi" src="icons/fsd96.png" />
         <icon density="xxhdpi" src="icons/fsd144.png" />
         <icon density="xxxhdpi" src="icons/fsd192.png" />
+	<preference name="android-minSdkVersion" value="23" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
