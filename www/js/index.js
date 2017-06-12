@@ -90,7 +90,7 @@ function menuFadeIn(menuid) {
 function fsdPage(pagename, pageid) {
 	$("#homepage").hide();
 	$.ajax({
-		url : "http://www.fsd38.ab.ca/API.php/" + pageid,
+		url : "http://www.fsd38.ab.ca/php/API.php/" + pageid,
 		success : function(result) {
 			menuFadeOut("#menufill");
 			$("#header").html(pagename);
@@ -114,7 +114,7 @@ function rssFeed(blogid, bltitle) {
 
 	$
 			.ajax({
-				url : "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.fsd38.ab.ca%2Frss.php%3Fid%3D"
+				url : "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fwww.fsd38.ab.ca%2Fphp%2Frss.php%3Fid%3D"
 						+ blogid
 						+ "%22&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",
 				accepts : {

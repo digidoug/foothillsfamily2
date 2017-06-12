@@ -1,0 +1,29 @@
+{
+    "name": "com.fsd38.empserv",
+    "version": "2.0.2",
+    "displayName": "Join the Foothills Family",
+    "cordova": {
+        "platforms": [
+            "android",
+            "ios"
+        ],
+        "plugins": {
+            "cordova-plugin-file": {},
+            "cordova-plugin-file-transfer": {},
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-statusbar-hide-on-startup": {},
+            "cordova-plugin-whitelist": {}
+        }
+    },
+    "dependencies": {
+        "cordova-android": "6.2.0-nightly.2016.11.23.3bfeda4a",
+        "cordova-ios": "4.4.0-nightly.2016.11.23.4b864624",
+        "cordova-plugin-file": "~4.3.0",
+        "cordova-plugin-file-transfer": "~1.6.0",
+        "cordova-plugin-inappbrowser": "~1.5.0",
+        "cordova-plugin-statusbar": "~2.2.0",
+        "cordova-plugin-statusbar-hide-on-startup": "~0.1.7",
+        "cordova-plugin-whitelist": "1"
+    }
+}
