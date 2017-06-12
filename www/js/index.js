@@ -75,7 +75,7 @@ var fsdinternalnav = {
 function aboutApp() {
 	menuFadeOut();
 	$("#header").html("About This App");
-	$("#settext").html("<h2>Join the Foothills Family</h2><p><strong>v. 2.0.0<br>Copyright 2014-2017<br>All Rights Reserved</strong></p>                          <p>Foothills School Division<br>P.O. Box 5700<br>120 5th Ave W.&nbsp;<br>High River, AB T1V 1M7<br>http://www.fsd38.ab.ca<br>(403)652-3001</p>");
+	$("#settext").html("<h2>Join the Foothills Family</h2><p><strong>v. 2.0.3<br>Copyright 2014-2017<br>All Rights Reserved</strong></p>                          <p>Foothills School Division<br>P.O. Box 5700<br>120 5th Ave W.&nbsp;<br>High River, AB T1V 1M7<br>http://www.fsd38.ab.ca<br>(403)652-3001</p>");
 
 }
 
